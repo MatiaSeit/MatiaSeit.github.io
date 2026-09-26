@@ -559,11 +559,9 @@ section {
    Hero
    ========================================================= */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 120px;
-  padding-bottom: 60px;
+  min-height: auto;
+  padding-top: 150px;
+  padding-bottom: 70px;
 }
 
 .hero-grid {
