@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Matias Seitlinger — Desarrollador Backend Junior</title>
+<meta name="description" content="Portfolio de Matias Seitlinger, desarrollador backend junior especializado en Java, Spring Boot, Python y Django. Basado en Barcelona." id="metaDesc" />
+<meta name="theme-color" content="#05060c" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="hyperspace-lines" aria-hidden="true"></div>
+
+<!-- Loader -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-ring"></div>
+  <div class="loader-text" data-i18n="loader.text">Iniciando hipermotor…</div>
+</div>
+
+<!-- Intro / opening crawl (texto propio, no oficial) -->
+<div id="crawl" role="dialog" aria-label="Intro">
+  <div class="crawl-perspective">
+    <div class="crawl-text">
+      <h2 data-i18n="crawl.title">TRANSMISIÓN ENTRANTE</h2>
+      <p data-i18n="crawl.p1"></p>
+      <p data-i18n="crawl.p2"></p>
+      <p data-i18n="crawl.p3"></p>
+    </div>
+  </div>
+  <div class="crawl-fade-top"></div>
+  <button class="skip-crawl" id="skipCrawl" data-i18n="crawl.skip">Saltar transmisión</button>
+</div>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#main" class="nav-brand">
+      <span class="nav-brand-mark">MS</span>
+      <span>Matias<br />Seitlinger</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+        <li><a href="#education" data-i18n="nav.education">Formación</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" id="langEs" class="active">ES</button>
+        <button type="button" data-lang="en" id="langEn">EN</button>
+      </div>
+      <button class="nav-toggle-btn" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="reveal is-visible">
+        <span class="hero-kicker"><span class="dot"></span><span data-i18n="hero.kicker">Disponible para nuevas misiones</span></span>
+        <h1 class="hero-title">
+          <span data-i18n="hero.title.pre">Hola, soy</span><br />
+          <span class="accent" data-i18n="hero.title.accent">Matias Seitlinger</span>
+        </h1>
+        <p class="hero-role"><span id="typedRole"></span><span class="cursor" id="typedCursor">&nbsp;</span></p>
+        <p class="hero-desc" data-i18n="hero.desc"></p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.projects">Ver proyectos</a>
+          <a href="assets/cv/Matias-Seitlinger-CV-ES.pdf" class="btn btn-ghost" id="heroCvLink" download>
+            <span data-i18n="hero.cta.cv">Descargar CV</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat"><b data-i18n="hero.stat1.num">24/24</b><span data-i18n="hero.stat1.label">Evaluaciones superadas</span></div>
+          <div class="hero-stat"><b data-i18n="hero.stat2.num">8+</b><span data-i18n="hero.stat2.label">Proyectos construidos</span></div>
+          <div class="hero-stat"><b data-i18n="hero.stat3.num">3</b><span data-i18n="hero.stat3.label">Idiomas</span></div>
+        </div>
+      </div>
+
+      <div class="reveal is-visible">
+        <div class="hero-panel">
+          <img src="assets/img/profile.jpg" alt="Foto de Matias Seitlinger" />
+          <span class="hud-corner tl"></span>
+          <span class="hud-corner tr"></span>
+          <span class="hud-corner bl"></span>
+          <span class="hud-corner br"></span>
+          <span class="hud-tag" data-i18n="hero.tag">// perfil_backend.json</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <span data-i18n="hero.scroll">Desplazar</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-eyebrow" data-i18n="about.eyebrow">Ficha del piloto</span>
+        <h2 class="section-title" data-i18n="about.title">Sobre mí</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p data-i18n-html="about.p1"></p>
+          <p data-i18n-html="about.p2"></p>
+          <p data-i18n-html="about.p3"></p>
+          <div class="tag-row" id="aboutTags"></div>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="about-card-row"><span data-i18n="about.card.location">Ubicación</span><span data-i18n="about.card.location.val">Barcelona, España</span></div>
+          <div class="about-card-row"><span data-i18n="about.card.focus">Foco actual</span><span data-i18n="about.card.focus.val">Backend Java / Spring Boot</span></div>
+          <div class="about-card-row"><span data-i18n="about.card.status">Disponibilidad</span><span data-i18n="about.card.status.val">Inmediata</span></div>
+          <div class="about-card-row"><span data-i18n="about.card.langs">Idiomas</span><span data-i18n="about.card.langs.val">Español · Inglés · Alemán</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-eyebrow" data-i18n="skills.eyebrow">Arsenal técnico</span>
+        <h2 class="section-title" data-i18n="skills.title">Habilidades</h2>
+        <p class="section-lead" data-i18n="skills.lead"></p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-card-head">
+            <span class="skill-icon" aria-hidden="true">&#10148;</span>
+            <h3 data-i18n="skills.backend.title">Backend</h3>
+          </div>
+          <ul class="skill-list" data-i18n-list="skills.backend.items"></ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head">
+            <span class="skill-icon" aria-hidden="true">&#9707;</span>
+            <h3 data-i18n="skills.db.title">Bases de datos</h3>
+          </div>
+          <ul class="skill-list" data-i18n-list="skills.db.items"></ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head">
+            <span class="skill-icon" aria-hidden="true">&#9673;</span>
+            <h3 data-i18n="skills.frontend.title">Frontend</h3>
+          </div>
+          <ul class="skill-list" data-i18n-list="skills.frontend.items"></ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head">
+            <span class="skill-icon" aria-hidden="true">&#9881;</span>
+            <h3 data-i18n="skills.tools.title">Herramientas</h3>
+          </div>
+          <ul class="skill-list" data-i18n-list="skills.tools.items"></ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-head">
+            <span class="skill-icon" aria-hidden="true">&#8734;</span>
+            <h3 data-i18n="skills.method.title">Metodologías</h3>
+          </div>
+          <ul class="skill-list" data-i18n-list="skills.method.items"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-eyebrow" data-i18n="projects.eyebrow">Bitácora de misiones</span>
+        <h2 class="section-title" data-i18n="projects.title">Proyectos</h2>
+        <p class="section-lead" data-i18n="projects.lead"></p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card featured reveal">
+          <p class="project-tagline" data-i18n="projects.pfm.tagline">Proyecto Final de Máster</p>
+          <h3 data-i18n="projects.pfm.title">Alliance Supply Command</h3>
+          <p data-i18n="projects.pfm.desc"></p>
+          <div class="project-stack">
+            <span>React</span><span>Django REST Framework</span><span>PostgreSQL</span><span>JWT</span><span>Celery/Redis</span><span>Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="https://proyecto-final-conquerblocks-1.onrender.com" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.link.demo">Demo</span> ↗
+            </a>
+            <a href="https://github.com/MatiaSeit/Proyecto-Final-Conquerblocks" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.link.repo">Repo</span> ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <p class="project-tagline" data-i18n="projects.apis.tagline">Backend · Java</p>
+          <h3 data-i18n="projects.apis.title">APIs REST en Java — Spring Boot</h3>
+          <p data-i18n="projects.apis.desc"></p>
+          <ul class="project-sublist" data-i18n-list="projects.apis.list"></ul>
+          <div class="project-stack">
+            <span>Spring Boot 3</span><span>JPA/Hibernate</span><span>MySQL</span><span>PostgreSQL</span><span>Swagger</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/MatiaSeit/order-management-api" target="_blank" rel="noopener noreferrer">Order API ↗</a>
+            <a href="https://github.com/MatiaSeit/inventory-management-api" target="_blank" rel="noopener noreferrer">Inventory API ↗</a>
+            <a href="https://github.com/MatiaSeit/hotel-reserva-api" target="_blank" rel="noopener noreferrer">Hotel API ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <p class="project-tagline" data-i18n="projects.django.tagline">Full Stack · Django</p>
+          <h3 data-i18n="projects.django.title">Biblioteca Digital & Gestor de Tareas</h3>
+          <p data-i18n="projects.django.desc"></p>
+          <div class="project-stack">
+            <span>Python</span><span>Django</span><span>SQL</span><span>Testing</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/MatiaSeit/DJANGO-1" target="_blank" rel="noopener noreferrer">DJANGO-1 ↗</a>
+            <a href="https://github.com/MatiaSeit/DJANGO-2" target="_blank" rel="noopener noreferrer">DJANGO-2 ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <p class="project-tagline" data-i18n="projects.react.tagline">Frontend · React</p>
+          <h3 data-i18n="projects.react.title">4 mini-apps en React</h3>
+          <p data-i18n="projects.react.desc"></p>
+          <div class="project-stack">
+            <span>React</span><span>Hooks</span><span>JavaScript</span><span>APIs externas</span>
+          </div>
+          <div class="project-links">
+            <a href="https://matiaseit.github.io/REACTJS-Proyecto-" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.link.demo">Demo</span> ↗
+            </a>
+            <a href="https://github.com/MatiaSeit/REACTJS-Proyecto-" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.link.repo">Repo</span> ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container two-col">
+      <div>
+        <div class="reveal">
+          <span class="section-eyebrow" data-i18n="education.eyebrow">Entrenamiento</span>
+          <h2 class="section-title" data-i18n="education.title">Formación</h2>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <span class="timeline-date" data-i18n="education.item.date">2025 — 2026</span>
+            <h3 data-i18n="education.item.title">Máster en Desarrollo Web Full Stack</h3>
+            <span class="org" data-i18n="education.item.org">Conquer Blocks</span>
+            <p data-i18n="education.item.desc"></p>
+            <span class="badge">✓ <span data-i18n="education.item.badge">Programa completado</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="reveal">
+          <span class="section-eyebrow" data-i18n="languages.eyebrow">Protocolos de comunicación</span>
+          <h2 class="section-title" data-i18n="languages.title">Idiomas</h2>
+        </div>
+
+        <div class="lang-grid reveal" id="langGrid">
+          <div class="lang-card">
+            <h3 data-i18n="languages.es">Español</h3>
+            <div class="meter"><span data-fill="100"></span></div>
+            <small data-i18n="languages.es.level">Nativo</small>
+          </div>
+          <div class="lang-card">
+            <h3 data-i18n="languages.en">Inglés</h3>
+            <div class="meter"><span data-fill="80"></span></div>
+            <small data-i18n="languages.en.level">Avanzado</small>
+          </div>
+          <div class="lang-card">
+            <h3 data-i18n="languages.de">Alemán</h3>
+            <div class="meter"><span data-fill="35"></span></div>
+            <small data-i18n="languages.de.level">Básico</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-eyebrow" data-i18n="experience.eyebrow">Registro de servicio</span>
+        <h2 class="section-title" data-i18n="experience.title">Experiencia previa</h2>
+        <p class="section-lead" data-i18n="experience.lead"></p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item dim">
+          <span class="timeline-date" data-i18n="experience.item1.date">2016 — 2020</span>
+          <h3 data-i18n="experience.item1.title">Encargado del Área Ecuestre</h3>
+          <span class="org" data-i18n="experience.item1.org">Fundación Al Reparo · Buenos Aires</span>
+          <p data-i18n="experience.item1.desc"></p>
+        </div>
+        <div class="timeline-item dim">
+          <span class="timeline-date" data-i18n="experience.item2.date">2015 — 2016</span>
+          <h3 data-i18n="experience.item2.title">Gestión de Documentación y Control de Calidad</h3>
+          <span class="org" data-i18n="experience.item2.org">Everest Travel GmbH · Frankfurt</span>
+          <p data-i18n="experience.item2.desc"></p>
+        </div>
+        <div class="timeline-item dim">
+          <span class="timeline-date" data-i18n="experience.item3.date">2010 — 2011</span>
+          <h3 data-i18n="experience.item3.title">Bartender</h3>
+          <span class="org" data-i18n="experience.item3.org">Velero Restaurante · Sídney</span>
+          <p data-i18n="experience.item3.desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-eyebrow" data-i18n="contact.eyebrow">Abrir canal</span>
+        <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+        <p class="section-lead" data-i18n="contact.lead"></p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-list reveal">
+          <a href="mailto:matiaseitlin@gmail.com">
+            <span class="ico" aria-hidden="true">@</span>
+            <span><strong data-i18n="contact.email">Email</strong><br />matiaseitlin@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/matias-seitlinger" target="_blank" rel="noopener noreferrer">
+            <span class="ico" aria-hidden="true">in</span>
+            <span><strong data-i18n="contact.linkedin">LinkedIn</strong><br />linkedin.com/in/matias-seitlinger</span>
+          </a>
+          <a href="https://github.com/MatiaSeit" target="_blank" rel="noopener noreferrer">
+            <span class="ico" aria-hidden="true">&lt;/&gt;</span>
+            <span><strong data-i18n="contact.github">GitHub</strong><br />github.com/MatiaSeit</span>
+          </a>
+          <a href="assets/cv/Matias-Seitlinger-CV-ES.pdf" download>
+            <span class="ico" aria-hidden="true">↓</span>
+            <span><strong data-i18n="contact.cv.es">CV en español</strong></span>
+          </a>
+          <a href="assets/cv/Matias-Seitlinger-CV-EN.pdf" download>
+            <span class="ico" aria-hidden="true">↓</span>
+            <span><strong data-i18n="contact.cv.en">CV en inglés</strong></span>
+          </a>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field">
+            <label for="cName" data-i18n="contact.form.name">Nombre</label>
+            <input type="text" id="cName" name="name" required />
+          </div>
+          <div class="field">
+            <label for="cEmail" data-i18n="contact.form.email">Email</label>
+            <input type="email" id="cEmail" name="email" required />
+          </div>
+          <div class="field">
+            <label for="cMessage" data-i18n="contact.form.message">Mensaje</label>
+            <textarea id="cMessage" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Enviar transmisión</button>
+          <p class="form-note" data-i18n="contact.form.note"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-quote" data-i18n="footer.quote">"Que la lógica te acompañe."</p>
+      <div class="footer-social">
+        <a href="https://github.com/MatiaSeit" target="_blank" rel="noopener noreferrer" aria-label="GitHub">&lt;/&gt;</a>
+        <a href="https://linkedin.com/in/matias-seitlinger" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="mailto:matiaseitlin@gmail.com" aria-label="Email">@</a>
+      </div>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Matias Seitlinger — <span data-i18n="footer.built">Construido con HTML, CSS y JavaScript — sin frameworks.</span></p>
+  </div>
+</footer>
+
+<button id="droid" aria-label="R2 helper" type="button">◉</button>
+<div id="droid-bubble" data-i18n="droid.hello"></div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
