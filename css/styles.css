@@ -58,8 +58,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 18.5px;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
@@ -542,7 +542,7 @@ section {
   color: var(--saber);
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  font-size: 12.5px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -566,8 +566,8 @@ section {
 
 .section-lead {
   color: var(--text-dim);
-  max-width: 640px;
-  font-size: 17.5px;
+  max-width: 660px;
+  font-size: 18.5px;
   margin-bottom: 40px;
 }
 
@@ -667,9 +667,9 @@ section {
 
 .hero-desc {
   color: var(--text-dim);
-  max-width: 560px;
+  max-width: 580px;
   margin-bottom: 34px;
-  font-size: 16px;
+  font-size: 17.5px;
 }
 
 .hero-actions {
@@ -831,13 +831,13 @@ section {
 }
 
 .about-text {
-  max-width: 640px;
+  max-width: 660px;
 }
 
 .about-text p {
   color: var(--text-dim);
-  margin-bottom: 18px;
-  font-size: 16.5px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .about-text strong {
@@ -853,8 +853,8 @@ section {
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  padding: 7px 13px;
+  font-size: 13.5px;
+  padding: 8px 14px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   color: var(--text-dim);
@@ -871,10 +871,10 @@ section {
 .about-card-row {
   display: flex;
   justify-content: space-between;
-  padding: 14px 0;
+  padding: 16px 0;
   border-bottom: 1px dashed var(--border);
   font-family: var(--font-ui);
-  font-size: 14.5px;
+  font-size: 16px;
 }
 
 .about-card-row:last-child {
@@ -885,7 +885,7 @@ section {
   color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .about-card-row span:last-child {
@@ -937,7 +937,7 @@ section {
 
 .skill-card h3 {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16.5px;
   margin: 0;
   letter-spacing: 0.03em;
 }
@@ -950,10 +950,10 @@ section {
 
 .skill-list li {
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 13.5px;
   color: var(--text-dim);
   border: 1px solid var(--border);
-  padding: 7px 12px;
+  padding: 8px 13px;
   border-radius: 6px;
 }
 
@@ -1006,7 +1006,7 @@ section {
 
 .project-tagline {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
@@ -1015,14 +1015,14 @@ section {
 
 .project-card h3 {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 20.5px;
   margin: 0 0 12px;
   letter-spacing: 0.01em;
 }
 
 .project-card p {
   color: var(--text-dim);
-  font-size: 14.5px;
+  font-size: 15.5px;
   margin-bottom: 16px;
   flex-grow: 1;
 }
@@ -1036,11 +1036,11 @@ section {
 
 .project-stack span {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--saber);
   border: 1px solid rgba(79, 214, 255, 0.3);
   background: rgba(79, 214, 255, 0.06);
-  padding: 4px 9px;
+  padding: 5px 10px;
   border-radius: 6px;
 }
 
@@ -1122,7 +1122,7 @@ section {
 
 .timeline-date {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--saber);
   letter-spacing: 0.06em;
   margin-bottom: 6px;
@@ -1131,13 +1131,13 @@ section {
 
 .timeline-item h3 {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 19px;
   margin: 0 0 6px;
 }
 
 .timeline-item .org {
   color: var(--text-dim);
-  font-size: 14px;
+  font-size: 15.5px;
   margin-bottom: 8px;
   display: block;
   font-family: var(--font-ui);
@@ -1145,7 +1145,7 @@ section {
 
 .timeline-item p {
   color: var(--text-dim);
-  font-size: 14.5px;
+  font-size: 16px;
   max-width: 640px;
 }
 
@@ -1188,7 +1188,7 @@ section {
 
 .lang-card h3 {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 17.5px;
   margin: 0 0 12px;
 }
 
@@ -1212,7 +1212,7 @@ section {
 .lang-card small {
   color: var(--text-faint);
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12.5px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -1240,10 +1240,10 @@ section {
   gap: 14px;
   border: 1px solid var(--border);
   background: var(--panel);
-  padding: 16px 18px;
+  padding: 18px 20px;
   border-radius: var(--radius-sm);
   font-family: var(--font-ui);
-  font-size: 15px;
+  font-size: 16.5px;
   transition: all 0.2s ease;
 }
 
@@ -1302,7 +1302,7 @@ section {
 }
 
 .form-note {
-  font-size: 12.5px;
+  font-size: 13.5px;
   color: var(--text-faint);
 }
 
