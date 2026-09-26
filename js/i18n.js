@@ -410,6 +410,11 @@ const I18N = {
   }
 };
 
+// Exponer explícitamente en window: las declaraciones `const`/`let` de nivel
+// superior NO se cuelgan automáticamente de window (a diferencia de `var`),
+// y main.js necesita acceder a este diccionario como window.I18N.
+window.I18N = I18N;
+
 if (typeof module !== "undefined") {
   module.exports = I18N;
 }
