@@ -71,7 +71,7 @@ const I18N = {
     "about.card.focus": "Foco actual",
     "about.card.focus.val": "Backend Java / Spring Boot",
     "about.card.status": "Disponibilidad",
-    "about.card.status.val": "Inmediata",
+    "about.card.status.val": "15 días de preaviso",
     "about.card.langs": "Idiomas",
     "about.card.langs.val": "Español · Inglés · Alemán",
 
@@ -200,7 +200,7 @@ const I18N = {
     "contact.form.note":
       "Este formulario envía el mensaje directo a mi correo — no se almacena en ningún servidor.",
 
-    "footer.quote": "“Que la lógica te acompañe.”",
+    "footer.quote": "“Que el código te acompañe.”",
     "footer.rights": "Todos los derechos reservados.",
     "footer.built": "Construido con HTML, CSS y JavaScript — sin frameworks.",
 
@@ -273,7 +273,7 @@ const I18N = {
     "about.card.focus": "Current focus",
     "about.card.focus.val": "Backend Java / Spring Boot",
     "about.card.status": "Availability",
-    "about.card.status.val": "Immediate",
+    "about.card.status.val": "15 days' notice",
     "about.card.langs": "Languages",
     "about.card.langs.val": "Spanish · English · German",
 
@@ -402,7 +402,7 @@ const I18N = {
     "contact.form.note":
       "This form sends your message straight to my inbox — nothing is stored on any server.",
 
-    "footer.quote": "“May the logic be with you.”",
+    "footer.quote": "“May the code be with you.”",
     "footer.rights": "All rights reserved.",
     "footer.built": "Built with HTML, CSS and JavaScript — no frameworks.",
 
